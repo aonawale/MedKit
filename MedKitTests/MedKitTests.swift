@@ -2,7 +2,7 @@
 //  MedKitTests.swift
 //  MedKitTests
 //
-//  Created by Ahmed Onawale on 5/28/16.
+//  Created by Ahmed Onawale on 5/26/16.
 //  Copyright © 2016 Ahmed Onawale. All rights reserved.
 //
 
@@ -21,16 +21,16 @@ class MedKitTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
+//    func testExample() {
+//        // This is an example of a functional test case.
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//    }
+//
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measureBlock {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
     
 }

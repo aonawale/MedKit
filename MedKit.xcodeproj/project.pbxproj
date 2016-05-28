@@ -12,6 +12,19 @@
 		85A8E34E1CF9E96900DE7DB3 /* MedKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E34D1CF9E96900DE7DB3 /* MedKitTests.swift */; };
 		85A8E3C71CF9F2E400DE7DB3 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A8E3BC1CF9F2DA00DE7DB3 /* Nimble.framework */; };
 		85A8E3C81CF9F2E900DE7DB3 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A8E3A71CF9F2B200DE7DB3 /* Quick.framework */; };
+		85A8E3D41CF9F64E00DE7DB3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3CA1CF9F64E00DE7DB3 /* Array.swift */; };
+		85A8E3D51CF9F64E00DE7DB3 /* CollectionDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3CB1CF9F64E00DE7DB3 /* CollectionDataSouce.swift */; };
+		85A8E3D61CF9F64E00DE7DB3 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3CC1CF9F64E00DE7DB3 /* DataSource.swift */; };
+		85A8E3D71CF9F64E00DE7DB3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3CD1CF9F64E00DE7DB3 /* Date.swift */; };
+		85A8E3D81CF9F64E00DE7DB3 /* FetchedCollectionDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3CE1CF9F64E00DE7DB3 /* FetchedCollectionDataSouce.swift */; };
+		85A8E3D91CF9F64E00DE7DB3 /* FetchedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3CF1CF9F64E00DE7DB3 /* FetchedDataSource.swift */; };
+		85A8E3DA1CF9F64E00DE7DB3 /* FetchedTableDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3D01CF9F64E00DE7DB3 /* FetchedTableDataSouce.swift */; };
+		85A8E3DB1CF9F64E00DE7DB3 /* TableDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3D11CF9F64E00DE7DB3 /* TableDataSouce.swift */; };
+		85A8E3DC1CF9F64E00DE7DB3 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3D21CF9F64E00DE7DB3 /* TableView.swift */; };
+		85A8E3DD1CF9F64E00DE7DB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3D31CF9F64E00DE7DB3 /* ViewController.swift */; };
+		85A8E3E51CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3E21CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift */; };
+		85A8E3E61CF9F6EB00DE7DB3 /* DataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3E31CF9F6EB00DE7DB3 /* DataSourceTest.swift */; };
+		85A8E3E71CF9F6EB00DE7DB3 /* TableDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3E41CF9F6EB00DE7DB3 /* TableDataSourceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +151,19 @@
 		85A8E34F1CF9E96900DE7DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A8E3941CF9F2B200DE7DB3 /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Carthage/Checkouts/Quick/Quick.xcodeproj; sourceTree = "<group>"; };
 		85A8E3B21CF9F2D900DE7DB3 /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = Carthage/Checkouts/Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
+		85A8E3CA1CF9F64E00DE7DB3 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		85A8E3CB1CF9F64E00DE7DB3 /* CollectionDataSouce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataSouce.swift; sourceTree = "<group>"; };
+		85A8E3CC1CF9F64E00DE7DB3 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		85A8E3CD1CF9F64E00DE7DB3 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		85A8E3CE1CF9F64E00DE7DB3 /* FetchedCollectionDataSouce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedCollectionDataSouce.swift; sourceTree = "<group>"; };
+		85A8E3CF1CF9F64E00DE7DB3 /* FetchedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedDataSource.swift; sourceTree = "<group>"; };
+		85A8E3D01CF9F64E00DE7DB3 /* FetchedTableDataSouce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedTableDataSouce.swift; sourceTree = "<group>"; };
+		85A8E3D11CF9F64E00DE7DB3 /* TableDataSouce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSouce.swift; sourceTree = "<group>"; };
+		85A8E3D21CF9F64E00DE7DB3 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		85A8E3D31CF9F64E00DE7DB3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85A8E3E21CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataSourceTest.swift; sourceTree = "<group>"; };
+		85A8E3E31CF9F6EB00DE7DB3 /* DataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceTest.swift; sourceTree = "<group>"; };
+		85A8E3E41CF9F6EB00DE7DB3 /* TableDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSourceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +209,9 @@
 		85A8E3401CF9E96900DE7DB3 /* MedKit */ = {
 			isa = PBXGroup;
 			children = (
+				85A8E3E01CF9F69B00DE7DB3 /* Protocols */,
+				85A8E3DF1CF9F66B00DE7DB3 /* Extensions */,
+				85A8E3DE1CF9F65900DE7DB3 /* DataSources */,
 				85A8E3411CF9E96900DE7DB3 /* MedKit.h */,
 				85A8E3431CF9E96900DE7DB3 /* Info.plist */,
 			);
@@ -192,6 +221,8 @@
 		85A8E34C1CF9E96900DE7DB3 /* MedKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				85A8E3E81CF9F6F900DE7DB3 /* DataSources */,
+				85A8E3E11CF9F6AB00DE7DB3 /* Protocols */,
 				85A8E34D1CF9E96900DE7DB3 /* MedKitTests.swift */,
 				85A8E34F1CF9E96900DE7DB3 /* Info.plist */,
 			);
@@ -234,6 +265,54 @@
 				85A8E3941CF9F2B200DE7DB3 /* Quick.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85A8E3DE1CF9F65900DE7DB3 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				85A8E3CB1CF9F64E00DE7DB3 /* CollectionDataSouce.swift */,
+				85A8E3CE1CF9F64E00DE7DB3 /* FetchedCollectionDataSouce.swift */,
+				85A8E3D01CF9F64E00DE7DB3 /* FetchedTableDataSouce.swift */,
+				85A8E3D11CF9F64E00DE7DB3 /* TableDataSouce.swift */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
+		85A8E3DF1CF9F66B00DE7DB3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				85A8E3CA1CF9F64E00DE7DB3 /* Array.swift */,
+				85A8E3CD1CF9F64E00DE7DB3 /* Date.swift */,
+				85A8E3D21CF9F64E00DE7DB3 /* TableView.swift */,
+				85A8E3D31CF9F64E00DE7DB3 /* ViewController.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		85A8E3E01CF9F69B00DE7DB3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				85A8E3CF1CF9F64E00DE7DB3 /* FetchedDataSource.swift */,
+				85A8E3CC1CF9F64E00DE7DB3 /* DataSource.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		85A8E3E11CF9F6AB00DE7DB3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				85A8E3E31CF9F6EB00DE7DB3 /* DataSourceTest.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		85A8E3E81CF9F6F900DE7DB3 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				85A8E3E21CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift */,
+				85A8E3E41CF9F6EB00DE7DB3 /* TableDataSourceTest.swift */,
+			);
+			name = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +541,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A8E3DD1CF9F64E00DE7DB3 /* ViewController.swift in Sources */,
+				85A8E3DB1CF9F64E00DE7DB3 /* TableDataSouce.swift in Sources */,
+				85A8E3D81CF9F64E00DE7DB3 /* FetchedCollectionDataSouce.swift in Sources */,
+				85A8E3D61CF9F64E00DE7DB3 /* DataSource.swift in Sources */,
+				85A8E3DA1CF9F64E00DE7DB3 /* FetchedTableDataSouce.swift in Sources */,
+				85A8E3DC1CF9F64E00DE7DB3 /* TableView.swift in Sources */,
+				85A8E3D91CF9F64E00DE7DB3 /* FetchedDataSource.swift in Sources */,
+				85A8E3D41CF9F64E00DE7DB3 /* Array.swift in Sources */,
+				85A8E3D51CF9F64E00DE7DB3 /* CollectionDataSouce.swift in Sources */,
+				85A8E3D71CF9F64E00DE7DB3 /* Date.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +558,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A8E3E61CF9F6EB00DE7DB3 /* DataSourceTest.swift in Sources */,
+				85A8E3E51CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift in Sources */,
 				85A8E34E1CF9E96900DE7DB3 /* MedKitTests.swift in Sources */,
+				85A8E3E71CF9F6EB00DE7DB3 /* TableDataSourceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,30 +670,33 @@
 		85A8E3531CF9E96900DE7DB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MedKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedonawale.MedKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		85A8E3541CF9E96900DE7DB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MedKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedonawale.MedKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
