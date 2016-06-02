@@ -30,77 +30,73 @@
 
 import UIKit
 import CoreData
-import Foundation
 
-class FetchedCollectionDataSource<Element: NSManagedObject, ListView: UICollectionView>: CollectionDataSource<Element, ListView>, FetchedDataSource, NSFetchedResultsControllerDelegate {
+public class FetchedCollectionDataSource<Element: NSManagedObject, ListView: UICollectionView>: CollectionDataSource<Element, ListView>, FetchedDataSource, NSFetchedResultsControllerDelegate {
     
-    required init(listView: ListView, fetchedResultsController: NSFetchedResultsController) {
+    public var operations = [NSBlockOperation]()
+    public let fetchedResultsController: NSFetchedResultsController
+    
+    public required init(listView: ListView, fetchedResultsController: NSFetchedResultsController) {
         self.fetchedResultsController = fetchedResultsController
         super.init([[]], listView: listView)
         self.fetchedResultsController.delegate = self
         performFetch()
     }
-    
-    var changeOperations = [NSBlockOperation]()
-    var fetchedResultsController: NSFetchedResultsController
-    
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
-        changeOperations.removeAll()
+
+    private func addOperationBlock(block: (Void) -> Void) {
+        operations.append(NSBlockOperation(block: block))
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+    public override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return countElementsIn(section: section)
+    }
+    
+    public override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return numberOfSections
+    }
+
+    public func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        operations.removeAll()
+    }
+    
+    public func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
         let indexSet = NSIndexSet(index: sectionIndex)
         switch type {
         case .Insert:
-            changeOperations.append(
-                NSBlockOperation { [weak self] in
-                    self?.listView.insertSections(indexSet)
-                })
+            addOperationBlock { self.listView.insertSections(indexSet) }
         case .Update:
-            changeOperations.append(
-                NSBlockOperation { [weak self] in
-                    self?.listView.reloadSections(indexSet)
-                })
+            addOperationBlock { self.listView.reloadSections(indexSet) }
         case .Delete:
-            changeOperations.append(
-                NSBlockOperation { [weak self] in
-                    self?.listView.deleteSections(indexSet)
-                })
+            addOperationBlock { self.listView.deleteSections(indexSet) }
         default:
             break
         }
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
         case .Insert:
-            changeOperations.append(
-                NSBlockOperation { [weak self] in
-                    self?.listView.insertItemsAtIndexPaths([newIndexPath!])
-                })
+            addOperationBlock { self.listView.insertItemsAtIndexPaths([newIndexPath!]) }
         case .Update:
-            changeOperations.append(
-                NSBlockOperation { [weak self] in
-                    self?.listView.reloadItemsAtIndexPaths([indexPath!])
-                })
+            addOperationBlock { self.listView.reloadItemsAtIndexPaths([indexPath!]) }
         case .Move:
-            changeOperations.append(
-                NSBlockOperation { [weak self] in
-                    self?.listView.moveItemAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
-                })
+            addOperationBlock { self.listView.moveItemAtIndexPath(indexPath!, toIndexPath: newIndexPath!) }
         case .Delete:
-            changeOperations.append(
-                NSBlockOperation { [weak self] in
-                    self?.listView.deleteItemsAtIndexPaths([indexPath!])
-                })
+            addOperationBlock { self.listView.deleteItemsAtIndexPaths([indexPath!]) }
         }
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    public func controllerDidChangeContent(controller: NSFetchedResultsController) {
         listView.performBatchUpdates({
-            self.changeOperations.forEach { $0.start() } }) { _ in
-                self.changeOperations.removeAll()
+            self.operations.forEach { $0.start() }
+        }) { _ in
+            self.operations.removeAll()
         }
+    }
+    
+    deinit {
+        operations.forEach { $0.cancel() }
+        operations.removeAll()
     }
     
 }

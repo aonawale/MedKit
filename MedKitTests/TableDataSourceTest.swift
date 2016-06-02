@@ -12,7 +12,7 @@ import XCTest
 
 @testable import MedKit
 
-class TableDataSourceTest: MedKitTests {
+class TableDataSourceTest: DataSourceTest {
     
     var tableDataSource: TableDataSource<String, UITableView>!
     let tableView = UITableView(frame: CGRectZero, style: .Plain)
@@ -25,31 +25,6 @@ class TableDataSourceTest: MedKitTests {
     override func tearDown() {
         super.tearDown()
         tableDataSource = nil
-    }
-    
-    func testNumberOfElements() {
-        XCTAssertEqual(tableDataSource.countElementsIn(section: 0), 4)
-        XCTAssertEqual(tableDataSource.countElementsIn(section: 1), 3)
-    }
-    
-    func testNumberOfSections() {
-        XCTAssertEqual(tableDataSource.numberOfSections, 2)
-    }
-    
-    func testElementAtIndexPath() {
-        XCTAssertEqual(tableDataSource[NSIndexPath(forRow: 0, inSection: 0)], "exit")
-        XCTAssertEqual(tableDataSource[NSIndexPath(forRow: 1, inSection: 0)], "import")
-        XCTAssertEqual(tableDataSource[NSIndexPath(forRow: 2, inSection: 0)], "require")
-        XCTAssertEqual(tableDataSource[NSIndexPath(forRow: 3, inSection: 0)], "catch")
-        
-        XCTAssertEqual(tableDataSource[NSIndexPath(forRow: 0, inSection: 1)], "Javascript")
-        XCTAssertEqual(tableDataSource[NSIndexPath(forRow: 1, inSection: 1)], "Go")
-        XCTAssertEqual(tableDataSource[NSIndexPath(forRow: 2, inSection: 1)], "Swift")
-    }
-    
-    func testElementsInSection() {
-        XCTAssertEqual(tableDataSource.elementsIn(section: 0), ["exit", "import", "require", "catch"])
-        XCTAssertEqual(tableDataSource.elementsIn(section: 1), ["Javascript", "Go", "Swift"])
     }
     
     func testCellAtIndexPath() {

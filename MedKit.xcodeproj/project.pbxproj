@@ -25,6 +25,8 @@
 		85A8E3E51CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3E21CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift */; };
 		85A8E3E61CF9F6EB00DE7DB3 /* DataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3E31CF9F6EB00DE7DB3 /* DataSourceTest.swift */; };
 		85A8E3E71CF9F6EB00DE7DB3 /* TableDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E3E41CF9F6EB00DE7DB3 /* TableDataSourceTest.swift */; };
+		85DABBD01CFE5F0600B08099 /* SegueIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DABBCF1CFE5F0600B08099 /* SegueIdentifiable.swift */; };
+		85DABBE11CFE608800B08099 /* SegueIdentifiableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DABBE01CFE608800B08099 /* SegueIdentifiableTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +166,8 @@
 		85A8E3E21CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataSourceTest.swift; sourceTree = "<group>"; };
 		85A8E3E31CF9F6EB00DE7DB3 /* DataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceTest.swift; sourceTree = "<group>"; };
 		85A8E3E41CF9F6EB00DE7DB3 /* TableDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSourceTest.swift; sourceTree = "<group>"; };
+		85DABBCF1CFE5F0600B08099 /* SegueIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifiable.swift; sourceTree = "<group>"; };
+		85DABBE01CFE608800B08099 /* SegueIdentifiableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifiableTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +298,7 @@
 			children = (
 				85A8E3CF1CF9F64E00DE7DB3 /* FetchedDataSource.swift */,
 				85A8E3CC1CF9F64E00DE7DB3 /* DataSource.swift */,
+				85DABBCF1CFE5F0600B08099 /* SegueIdentifiable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				85A8E3E31CF9F6EB00DE7DB3 /* DataSourceTest.swift */,
+				85DABBE01CFE608800B08099 /* SegueIdentifiableTest.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -543,6 +549,7 @@
 			files = (
 				85A8E3DD1CF9F64E00DE7DB3 /* ViewController.swift in Sources */,
 				85A8E3DB1CF9F64E00DE7DB3 /* TableDataSouce.swift in Sources */,
+				85DABBD01CFE5F0600B08099 /* SegueIdentifiable.swift in Sources */,
 				85A8E3D81CF9F64E00DE7DB3 /* FetchedCollectionDataSouce.swift in Sources */,
 				85A8E3D61CF9F64E00DE7DB3 /* DataSource.swift in Sources */,
 				85A8E3DA1CF9F64E00DE7DB3 /* FetchedTableDataSouce.swift in Sources */,
@@ -558,6 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DABBE11CFE608800B08099 /* SegueIdentifiableTest.swift in Sources */,
 				85A8E3E61CF9F6EB00DE7DB3 /* DataSourceTest.swift in Sources */,
 				85A8E3E51CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift in Sources */,
 				85A8E34E1CF9E96900DE7DB3 /* MedKitTests.swift in Sources */,

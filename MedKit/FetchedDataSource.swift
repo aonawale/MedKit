@@ -29,48 +29,66 @@
 //
 
 import CoreData
-import Foundation
 
-protocol FetchedDataSource: DataSource {
+/// This protocol can be adopted by any object capable of showing a list of elements of type NSManagedObject.
+/// The adopter must specify what type of element they are showing and
+/// what type of view the elements will be shown in.
+public protocol FetchedDataSource: DataSource {
+    /// A NSFetchedResultsController for managing the listView when there are changes in managed objects.
     var fetchedResultsController: NSFetchedResultsController { get }
+    /// Calls performFetch method on NSFetchedResultsController.
+    /// Default implementation does not handle error.
+    /// You should provide your own implementation to handle errors and avoid crash.
     func performFetch()
+    /// Initializes a new instance of the conforming type.
+    /// - Parameters:
+    ///   - listView: A view to show the list of elements.
+    ///   - fetchedResultsController: An instance of NSFetchedResultsController.
     init(listView: ListView, fetchedResultsController: NSFetchedResultsController)
 }
 
-extension FetchedDataSource {
+public extension FetchedDataSource {
     
-    /// number of elements in section
+    /// Returns the number of elements in a given section.
+    /// - Parameter section: The section number of elements to count.
+    /// - Returns: The number of elements in the given section.
     func countElementsIn(section section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
-    /// number of sections
+    /// Returns the number of sections in the fetchedResultsController.
+    /// - Returns: The number of sections.
     var numberOfSections: Int {
         return fetchedResultsController.sections?.count ?? 0
     }
     
-    /// get element at indexPath
-    subscript(indexPath: NSIndexPath) -> Element {
-        return fetchedResultsController.objectAtIndexPath(indexPath) as! Element
+    /// Returns an element at indexPath.
+    /// An element at a given NSIndexPath or nil if no element exist at the specified indexPath.
+    /// - Parameter indexPath: The indexPath locating the element in the fetchedResultsController.
+    /// - Returns: An element at the givin indexPath or nil if the indexPath is out of range.
+    subscript(indexPath: NSIndexPath) -> Element? {
+        return fetchedResultsController.objectAtIndexPath(indexPath) as? Element
     }
     
 }
 
-extension FetchedDataSource where Element: NSManagedObject {
+public extension FetchedDataSource where Element: NSManagedObject {
     
-    /// Calls performFetch method on NSFetchedResultsController
-    /// Default implementation throws does not handle error
-    /// You should provide your own implementation to handle errors and avoid crash
+    /// Calls performFetch method on NSFetchedResultsController.
+    /// Default implementation does not handle error.
+    /// You should provide your own implementation to handle errors and avoid crash.
     func performFetch() {
         try! fetchedResultsController.performFetch()
     }
     
-    /// Returns all fetched objects
+    /// Returns all fetched object in the fetchedResultsController.
     var elements: [[Element]] {
         return [fetchedResultsController.fetchedObjects as! [Element]]
     }
     
-    /// get elements in section
+    /// Returns the elements in a given section.
+    /// - Parameter section: The section number of elements to return.
+    /// - Returns: An array of elements.
     func elementsIn(section section: Int) -> [Element] {
         return fetchedResultsController.sections?[section].objects as? [Element] ?? []
     }

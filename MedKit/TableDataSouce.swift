@@ -29,11 +29,13 @@
 //
 
 import UIKit
-import Foundation
 
-class TableDataSource<Element, ListView: UITableView>: NSObject, DataSource, UITableViewDataSource {
+public class TableDataSource<Element, ListView: UITableView>: NSObject, DataSource, UITableViewDataSource {
     
-    required init(_ elements: [[Element]], listView: ListView) {
+    public var listView: ListView
+    public var elements: [[Element]]
+    
+    public required init(_ elements: [[Element]], listView: ListView) {
         self.elements = elements
         self.listView = listView
         super.init()
@@ -41,24 +43,21 @@ class TableDataSource<Element, ListView: UITableView>: NSObject, DataSource, UIT
         listView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
-    var listView: ListView
-    var elements: [[Element]]
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countElementsIn(section: section)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return numberOfSections
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         cell.textLabel?.text = "\(self[indexPath])"
         return cell
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         guard editingStyle == .Delete, let _ = elements[safe: indexPath.section]?[safe: indexPath.row] else { return }
         elements[indexPath.section].removeAtIndex(indexPath.row)
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)

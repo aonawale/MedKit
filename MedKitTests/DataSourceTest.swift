@@ -6,14 +6,12 @@
 //  Copyright © 2016 Ahmed Onawale. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import XCTest
-
 @testable import MedKit
 
 
-class DataSourceA<Element, ListView>: DataSource {
+class Grocery<Element, ListView>: DataSource {
     
     var listView: ListView
     var elements: [[Element]]
@@ -27,7 +25,8 @@ class DataSourceA<Element, ListView>: DataSource {
 
 class DataSourceTest: MedKitTests {
     
-    let dataSource = DataSourceA([["exit", "import", "require", "catch"], ["Javascript", "Go", "Swift"]], listView: UIView())
+    let dataSource = Grocery([["exit", "import", "require", "catch"], ["Javascript", "Go", "Swift"]], listView: UIView())
+    
     func testNumberOfElements() {
         XCTAssertEqual(dataSource.countElementsIn(section: 0), 4)
         XCTAssertEqual(dataSource.countElementsIn(section: 1), 3)

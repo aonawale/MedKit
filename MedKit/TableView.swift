@@ -37,9 +37,9 @@
 import UIKit
 import Foundation
 
-extension UITableView {
+public extension UITableView {
     
-    func reloadSection(index: Int, animation: UITableViewRowAnimation = .Automatic) {
+    public func reloadSection(index: Int, animation: UITableViewRowAnimation = .Automatic) {
         reloadSections(NSIndexSet(index: index), withRowAnimation: animation)
     }
     

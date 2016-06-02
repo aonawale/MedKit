@@ -1,15 +1,9 @@
 //
-//  ViewController.swift
+//  SegueIdentifiable.swift
 //  MedKit
 //
-//  Created by Ahmed Onawale on 5/26/16.
+//  Created by Ahmed Onawale on 6/1/16.
 //  Copyright © 2016 Ahmed Onawale. All rights reserved.
-//
-//  --------------------------------------------
-//
-//  Simple UIViewController extensions to make your life easier.
-//
-//  --------------------------------------------
 //
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
@@ -35,15 +29,29 @@
 //
 
 import Foundation
-import UIKit
 
-public extension UIViewController {
+/// This protocol specifies the requirement of a class that can be identifed by a Segue
+public protocol SegueIdentifiable: class {
+    /// The type of thing that will be used to identify segues.
+    /// This type must conform to the RawRepresentable protocol.
+    associatedtype SegueIdentifier: RawRepresentable
+}
+
+public extension SegueIdentifiable where Self: UIViewController, SegueIdentifier.RawValue == String {
+    /// Initiate with the specified SegueIdentifier from the current view controller storyboard file.
+    /// - Parameters:
+    ///   - segueIdentifier: A SegueIdentifier type provided when you conform to SegueIdentifiable protocol.
+    ///   - sender: The object that initializes the segue.
+    func performSegueWithIdentifier(segueIdentifier: SegueIdentifier, sender: AnyObject?) {
+        performSegueWithIdentifier(segueIdentifier.rawValue, sender: sender)
+    }
     
-    public var contentViewController: UIViewController {
-        if let navcon = self as? UINavigationController {
-            return navcon.topViewController ?? self
-        }
-        return self
+    /// Returns a SegueIdentifier for a given segue.
+    /// - Parameters segue: A UIStoryboardSegue object responsible for performing a segue.
+    /// - Returns: A SegueIdentifier type or nil if the segue identifier is invalid.
+    func segueIdentifierForSegue(segue: UIStoryboardSegue) -> SegueIdentifier? {
+        guard let identifier = segue.identifier else { return nil }
+        return SegueIdentifier(rawValue: identifier)
     }
     
 }

@@ -30,32 +30,31 @@
 
 import UIKit
 import CoreData
-import Foundation
 
-class FetchedTableDataSource<Element: NSManagedObject, ListView: UITableView>: TableDataSource<Element, ListView>, FetchedDataSource, NSFetchedResultsControllerDelegate {
+public class FetchedTableDataSource<Element: NSManagedObject, ListView: UITableView>: TableDataSource<Element, ListView>, FetchedDataSource, NSFetchedResultsControllerDelegate {
     
-    var fetchedResultsController: NSFetchedResultsController
+    public let fetchedResultsController: NSFetchedResultsController
     
-    required init(listView: ListView, fetchedResultsController: NSFetchedResultsController) {
+    public required init(listView: ListView, fetchedResultsController: NSFetchedResultsController) {
         self.fetchedResultsController = fetchedResultsController
         super.init([[]], listView: listView)
         self.fetchedResultsController.delegate = self
         performFetch()
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countElementsIn(section: section)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    public override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return numberOfSections
     }
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    public func controllerWillChangeContent(controller: NSFetchedResultsController) {
         listView.beginUpdates()
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+    public func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
         switch type {
         case .Insert:
             listView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Automatic)
@@ -68,7 +67,7 @@ class FetchedTableDataSource<Element: NSManagedObject, ListView: UITableView>: T
         }
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
         case .Insert:
             listView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Automatic)
@@ -81,7 +80,7 @@ class FetchedTableDataSource<Element: NSManagedObject, ListView: UITableView>: T
         }
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    public func controllerDidChangeContent(controller: NSFetchedResultsController) {
         listView.endUpdates()
     }
     

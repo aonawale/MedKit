@@ -29,11 +29,13 @@
 //
 
 import UIKit
-import Foundation
 
-class CollectionDataSource<Element, ListView: UICollectionView>: NSObject, DataSource, UICollectionViewDataSource {
+public class CollectionDataSource<Element, ListView: UICollectionView>: NSObject, DataSource, UICollectionViewDataSource {
     
-    required init(_ elements: [[Element]], listView: ListView) {
+    public var listView: ListView
+    public var elements: [[Element]]
+    
+    public required init(_ elements: [[Element]], listView: ListView) {
         self.elements = elements
         self.listView = listView
         super.init()
@@ -41,18 +43,15 @@ class CollectionDataSource<Element, ListView: UICollectionView>: NSObject, DataS
         listView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
     
-    var listView: ListView
-    var elements: [[Element]]
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return countElementsIn(section: section)
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return numberOfSections
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
     }
     
