@@ -53,7 +53,7 @@ public extension FetchedDataSource {
     /// - Parameter section: The section number of elements to count.
     /// - Returns: The number of elements in the given section.
     func countElementsIn(section section: Int) -> Int {
-        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        return fetchedResultsController.sections?[safe: section]?.numberOfObjects ?? 0
     }
     
     /// Returns the number of sections in the fetchedResultsController.
@@ -82,15 +82,23 @@ public extension FetchedDataSource where Element: NSManagedObject {
     }
     
     /// Returns all fetched object in the fetchedResultsController.
-    var elements: [[Element]] {
-        return [fetchedResultsController.fetchedObjects as! [Element]]
+    var fetchedObjects: [Element] {
+        return fetchedResultsController.fetchedObjects as? [Element] ?? []
     }
     
     /// Returns the elements in a given section.
     /// - Parameter section: The section number of elements to return.
     /// - Returns: An array of elements.
     func elementsIn(section section: Int) -> [Element] {
-        return fetchedResultsController.sections?[section].objects as? [Element] ?? []
+        return fetchedResultsController.sections?[safe: section]?.objects as? [Element] ?? []
+    }
+    
+    /// Returns an element at indexPath.
+    /// An element at a given NSIndexPath or nil if no element exist at the specified indexPath.
+    /// - Parameter indexPath: The indexPath locating the element listView.
+    /// - Returns: An element at the givin indexPath or nil if the indexPath is out of range.
+    subscript(indexPath: NSIndexPath) -> Element? {
+        return fetchedResultsController.objectAtIndexPath(indexPath) as? Element
     }
     
 }

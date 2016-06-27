@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851957501D20927C0067B239 /* FetchedDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8519574F1D20927C0067B239 /* FetchedDataSourceTest.swift */; };
+		851957621D209E980067B239 /* MedKitTests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 851957601D209E980067B239 /* MedKitTests.xcdatamodeld */; };
 		85A8E3421CF9E96900DE7DB3 /* MedKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A8E3411CF9E96900DE7DB3 /* MedKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85A8E3491CF9E96900DE7DB3 /* MedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A8E33E1CF9E96900DE7DB3 /* MedKit.framework */; };
 		85A8E34E1CF9E96900DE7DB3 /* MedKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A8E34D1CF9E96900DE7DB3 /* MedKitTests.swift */; };
@@ -145,6 +147,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8519574F1D20927C0067B239 /* FetchedDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedDataSourceTest.swift; sourceTree = "<group>"; };
+		851957611D209E980067B239 /* MedKitTests.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedKitTests.xcdatamodel; sourceTree = "<group>"; };
 		85A8E33E1CF9E96900DE7DB3 /* MedKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MedKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A8E3411CF9E96900DE7DB3 /* MedKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedKit.h; sourceTree = "<group>"; };
 		85A8E3431CF9E96900DE7DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				85A8E3E11CF9F6AB00DE7DB3 /* Protocols */,
 				85A8E34D1CF9E96900DE7DB3 /* MedKitTests.swift */,
 				85A8E34F1CF9E96900DE7DB3 /* Info.plist */,
+				851957601D209E980067B239 /* MedKitTests.xcdatamodeld */,
 			);
 			path = MedKitTests;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 			children = (
 				85A8E3E31CF9F6EB00DE7DB3 /* DataSourceTest.swift */,
 				85DABBE01CFE608800B08099 /* SegueIdentifiableTest.swift */,
+				8519574F1D20927C0067B239 /* FetchedDataSourceTest.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -567,7 +573,9 @@
 			files = (
 				85DABBE11CFE608800B08099 /* SegueIdentifiableTest.swift in Sources */,
 				85A8E3E61CF9F6EB00DE7DB3 /* DataSourceTest.swift in Sources */,
+				851957501D20927C0067B239 /* FetchedDataSourceTest.swift in Sources */,
 				85A8E3E51CF9F6EB00DE7DB3 /* CollectionDataSourceTest.swift in Sources */,
+				851957621D209E980067B239 /* MedKitTests.xcdatamodeld in Sources */,
 				85A8E34E1CF9E96900DE7DB3 /* MedKitTests.swift in Sources */,
 				85A8E3E71CF9F6EB00DE7DB3 /* TableDataSourceTest.swift in Sources */,
 			);
@@ -771,6 +779,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		851957601D209E980067B239 /* MedKitTests.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				851957611D209E980067B239 /* MedKitTests.xcdatamodel */,
+			);
+			currentVersion = 851957611D209E980067B239 /* MedKitTests.xcdatamodel */;
+			path = MedKitTests.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 85A8E3351CF9E96900DE7DB3 /* Project object */;
 }
