@@ -25,7 +25,7 @@ class Grocery<Element, ListView>: DataSource {
 
 class DataSourceTest: MedKitTests {
     
-    let dataSource = Grocery([["exit", "import", "require", "catch"], ["Javascript", "Go", "Swift"]], listView: UIView())
+    let dataSource = Grocery([["Butter", "Milk", "Break", "Bacon"], ["Javascript", "Go", "Swift"]], listView: UIView())
     
     func testNumberOfElements() {
         XCTAssertEqual(dataSource.countElementsIn(section: 0), 4)
@@ -37,10 +37,10 @@ class DataSourceTest: MedKitTests {
     }
     
     func testElementAtIndexPath() {
-        XCTAssertEqual(dataSource[NSIndexPath(forRow: 0, inSection: 0)], "exit")
-        XCTAssertEqual(dataSource[NSIndexPath(forRow: 1, inSection: 0)], "import")
-        XCTAssertEqual(dataSource[NSIndexPath(forRow: 2, inSection: 0)], "require")
-        XCTAssertEqual(dataSource[NSIndexPath(forRow: 3, inSection: 0)], "catch")
+        XCTAssertEqual(dataSource[NSIndexPath(forRow: 0, inSection: 0)], "Butter")
+        XCTAssertEqual(dataSource[NSIndexPath(forRow: 1, inSection: 0)], "Milk")
+        XCTAssertEqual(dataSource[NSIndexPath(forRow: 2, inSection: 0)], "Break")
+        XCTAssertEqual(dataSource[NSIndexPath(forRow: 3, inSection: 0)], "Bacon")
         
         XCTAssertEqual(dataSource[NSIndexPath(forRow: 0, inSection: 1)], "Javascript")
         XCTAssertEqual(dataSource[NSIndexPath(forRow: 1, inSection: 1)], "Go")
@@ -48,7 +48,7 @@ class DataSourceTest: MedKitTests {
     }
     
     func testElementsInSection() {
-        XCTAssertEqual(dataSource.elementsIn(section: 0), ["exit", "import", "require", "catch"])
+        XCTAssertEqual(dataSource.elementsIn(section: 0), ["Butter", "Milk", "Break", "Bacon"])
         XCTAssertEqual(dataSource.elementsIn(section: 1), ["Javascript", "Go", "Swift"])
     }
     
